@@ -2,7 +2,7 @@
   "name": "gerarcepbrasil",
   "displayName": "Gerador CEP brasil",
   "description": "gera CEP",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "publisher": "rslgp",
   "repository": "https://github.com/rslgp/cep-vs-extension",
   "license": "MIT",
@@ -31,9 +31,6 @@
         "category": "CEP"
       }
     ]
-  },
-  "dependencies": {
-    "axios": "^1.7.9"
   },
   "scripts": {
     "lint": "eslint .",
