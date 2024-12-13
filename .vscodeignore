@@ -1,0 +1,11 @@
+# Ignore node_modules folder (since it's already bundled with npm)
+node_modules/
+
+# Ignore test files
+test/
+
+# Ignore unnecessary documentation
+*.md
+
+# Ignore all configuration files, except those needed
+*.json

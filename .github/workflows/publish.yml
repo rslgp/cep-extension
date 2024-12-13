@@ -1,0 +1,48 @@
+name: Publish VS Code Extension
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install -g @vscode/vsce && npm i
+
+# auto config patch
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Increment version
+        run:  |
+          git reset --hard HEAD
+          git pull -f
+          npm version patch
+
+      - name: Commit version bump # warning using force and use pending commit
+        run: |
+          git add package.json
+          git commit -m "Increment version [skip ci]" || echo "No changes to commit"
+          git push --force
+# END auto config patch
+
+      - name: Package and publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          vsce package
+          vsce publish --pat $VSCE_PAT
