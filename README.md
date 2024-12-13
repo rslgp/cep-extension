@@ -2,9 +2,9 @@
 
 This VS Code extension fetches and displays generated Brazilian CEP (Postal Code) data from an API. https://www.invertexto.com and learn from randomeverything
 
-## Features
+## How to use
 
-- Fetches a new CEP with related address details.
-- Displays the result in a JSON forma.
+- ctrl + shift + P
+- type CEP
 
 
