@@ -8,3 +8,8 @@ This VS Code extension fetches and displays generated Brazilian CEP (Postal Code
 - type CEP
 
 
+## dev-local
+
+    vsce package && code --install-extension ./*.vsix
+
+    help > toggle developer tools (next to about)

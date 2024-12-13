@@ -51,12 +51,12 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "gerador-cep-brasil" is now active!');
+	console.log('Congratulations, your extension "gerarcepbrasil" is now active!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('gerador-cep-brasil.cepComplete', async () => {
+	const disposable = vscode.commands.registerCommand('gerarcepbrasil.cepcomplete', async () => {
 		const cepdata = await fetchCEP();
 
 		const jsonOutput = JSON.stringify(cepdata, null, 2);
@@ -72,7 +72,7 @@ function activate(context) {
 		}
 	});
 
-	const disposable2 = vscode.commands.registerCommand('gerador-cep-brasil.cepOnly', async () => {
+	const disposable2 = vscode.commands.registerCommand('gerarcepbrasil.ceponly', async () => {
 		const cepdata = await fetchCEP();
 
 		//extract from https://github.com/helixquar/randomeverything/blob/master/src/extension.ts#L293

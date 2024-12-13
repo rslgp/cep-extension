@@ -1,8 +1,8 @@
 {
-  "name": "gerador-cep-brasil",
+  "name": "gerarcepbrasil",
   "displayName": "Gerador CEP brasil",
   "description": "gera CEP",
-  "version": "0.0.5",
+  "version": "0.0.2",
   "publisher": "rslgp",
   "repository": "https://github.com/rslgp/cep-vs-extension",
   "license": "MIT",
@@ -14,19 +14,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:gerador-cep-brasil.cepOnly",
-    "onCommand:gerador-cep-brasil.cepComplete"
+    "onCommand:gerarcepbrasil.cepcomplete",
+    "onCommand:gerarcepbrasil.ceponly"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "gerador-cep-brasil.cepOnly",
+        "command": "gerarcepbrasil.ceponly",
         "title": "Gerar CEP apenas",
         "category": "CEP"
       },
       {
-        "command": "gerador-cep-brasil.cepComplete",
+        "command": "gerarcepbrasil.cepcomplete",
         "title": "Gerar CEP Completo",
         "category": "CEP"
       }
